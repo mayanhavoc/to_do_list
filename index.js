@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const PORT = 3000
+const PORT = 3000;
 
 //models
 const TodoTask = require("./models/TodoTask");
@@ -14,7 +14,7 @@ mongoose.set("useFindAndModify", false);
 
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
     console.log("Connected to db!");
-    app.listen(3000, () => console.log("Server Up and running"));
+    app.listen(process.env.PORT || 3000);
 });
 
 
